@@ -171,7 +171,7 @@ class _SignUpState extends State<SignUp> {
             isLoading = true;
           });
 
-          signinHere(usernamecontroller.text, emailcontroller.text,
+          SignUpHere(usernamecontroller.text, emailcontroller.text,
                   pwdController.text)
               .then((user) {
             if (user != null) {

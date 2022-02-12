@@ -1,8 +1,7 @@
-import 'package:chatapp/chatdatabase/chatroom.dart';
 import 'package:chatapp/screens/Login.dart';
 import 'package:chatapp/screens/Signup.dart';
 
-import 'package:chatapp/search/search_screen.dart';
+import 'package:chatapp/chatdatabase/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -19,12 +18,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ChatRoom(
-        chatRoomId: '',
-        userMap: {},
-      ),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Home());
   }
 }

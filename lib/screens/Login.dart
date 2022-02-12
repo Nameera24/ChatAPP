@@ -1,7 +1,6 @@
 import 'package:chatapp/auth/methods.dart';
+import 'package:chatapp/chatdatabase/home_screen.dart';
 
-import 'package:chatapp/screens/Signup.dart';
-import 'package:chatapp/search/search_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -62,22 +61,6 @@ class _LoginState extends State<Login> {
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignUp()));
-                  },
-                  child: Text(
-                    "SignUp",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
                 ),
               ],
             ),
@@ -141,7 +124,7 @@ class _LoginState extends State<Login> {
             isLoading = true;
           });
 
-          LoginHere(
+          logIn(
             emailController.text,
             pwdController.text,
           ).then((user) {
@@ -150,7 +133,7 @@ class _LoginState extends State<Login> {
                 isLoading = false;
               });
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Search()));
+                  context, MaterialPageRoute(builder: (_) => Home()));
               print("logIN Sucessfull");
             } else {
               print("LogIN Failed");

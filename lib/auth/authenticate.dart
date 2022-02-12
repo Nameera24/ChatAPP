@@ -1,4 +1,4 @@
-import 'package:chatapp/search/search_screen.dart';
+import 'package:chatapp/chatdatabase/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:chatapp/screens/Login.dart';
@@ -9,7 +9,7 @@ class Authenticate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (auth.currentUser != null) {
-      return Search();
+      return Home();
     } else {
       return Login();
     }
